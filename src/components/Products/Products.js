@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
+import Skeleton from 'react-loading-skeleton';
 
 export default function Products() {
     const [products, setProducts] = useState([]);
@@ -16,34 +17,51 @@ export default function Products() {
             setFilter(data);
             setLoading(false);
         }   
-        getProducts();
+            getProducts();
+
     }, []);
 
     const Loading = () => {
         return (
-            <div class="spinner-border text-info" role="status">
-                <span class="visually-hidden">Loading...</span>
+        <div>
+            <div class=" col-md-3 ">
+                    <Skeleton height={350}/>
             </div>
+            <div class=" col-md-3 ">
+                <Skeleton height={350}/>
+            </div>
+            <div class=" col-md-3 ">
+                <Skeleton height={350}/>
+            </div>
+            <div class=" col-md-3 ">
+                <Skeleton height={350}/>
+            </div>
+        </div>
         )
+           
     }
 
+    const filterProduct = (category) => {
+        const newFilter = products.filter((product) => product.category === category);
+        setFilter(newFilter);
+    }
     const ShowProducts = () => {
         return (
             <>
                     <div class ="buttons d-flex justify-content-center ">
-                        <button class="btn btn-outline-info me-2">
+                        <button class="btn btn-outline-info me-2" onClick={() => setFilter(products)}>
                         All 
                         </button>
-                        <button class="btn btn-outline-info me-2">
-                            Men's Cloths
+                        <button class="btn btn-outline-info me-2" onClick={() => filterProduct("men's clothing")}>
+                            Men's Clothing
                         </button>
-                        <button class="btn btn-outline-info me-2">
-                            Women's Cloths
+                        <button class="btn btn-outline-info me-2" onClick={() => filterProduct("women's clothing")}>
+                            Women's Clothing
                         </button>
-                        <button class="btn btn-outline-info me-2">
+                        <button class="btn btn-outline-info me-2" onClick={() => filterProduct("jewelery")}>
                             Jewelery Clothing
                         </button>
-                        <button class="btn btn-outline-info me-2">
+                        <button class="btn btn-outline-info me-2" onClick={() => filterProduct("electronics")}>
                             Electronics
                         </button>
                     </div>
