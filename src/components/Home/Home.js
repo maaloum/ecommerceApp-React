@@ -1,4 +1,5 @@
 import React from 'react'
+import Products from '../Products/Products'
 import './Home.css'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         </div>
     </div>
     </div>
+    <Products/>
     
     </div>
   )
