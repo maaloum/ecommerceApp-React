@@ -28,13 +28,13 @@ export default function Navbar() {
             </li>
         </ul>
         <div class ="buttons">
-            <button class="btn btn-outline-dark me-2" type="submit">
+            <button class="btn btn-outline-info me-2" type="submit">
             <i class="fa fa-sign-in me-1"></i>
             Login</button>
-            <button class="btn btn-outline-dark me-2" type="submit">
+            <button class="btn btn-outline-info me-2" type="submit">
             <i class="fa fa-user-plus me-1"></i>
             register</button>
-            <button class="btn btn-outline-dark me-2" type="submit">
+            <button class="btn btn-outline-info me-2" type="submit">
             <i class="fa fa-cart-arrow-down me-1"></i>
             Cart (0) </button>
         </div>
