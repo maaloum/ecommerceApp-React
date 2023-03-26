@@ -2,11 +2,20 @@ import React,  {useState, useEffect} from 'react'
 import { useParams, } from 'react-router-dom'
 import Skeleton from 'react-loading-skeleton';
 import {NavLink} from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function Product() {
     const {id} = useParams();
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(false);
+    const dispatch = useDispatch();
+
+    const addProductToCart = (product) => {
+        dispatch({
+            type: 'ADD_PRODUCT',
+            payload: product,
+        })
+    }
 
     useEffect(() => {
         const getProduct = async () => {
@@ -61,7 +70,7 @@ export default function Product() {
                 <p className='lead'>
                 {product.description}
                 </p>
-                <button className="btn btn-outline-info px-4 py-2">Add to Cart</button>
+                <button className="btn btn-outline-info px-4 py-2" onClick = {() => {addProductToCart(product)}}>Add to Cart</button>
                 <NavLink className="btn btn-outline-info ms-2 px-3 py-2 " to= '/cart'>Go to Cart</NavLink>
 
             </div>
