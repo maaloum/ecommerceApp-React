@@ -10,6 +10,7 @@ import SignUp from './components/SignUp/SignUp';
 import Contact from './components/ContactUs/Contact';
 import Footer from './components/Footer/Footer';
 import About from './components/About/About';
+import BackToTop from './components/BackToTop/BackToTop'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path="/about" element={<About />} />
 
           </Routes>
+          <BackToTop/>
           <Footer/>
       </>
   );
