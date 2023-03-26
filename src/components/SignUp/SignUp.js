@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SignUp() {
   return (
-    <form class="row g-3 py-4 justify-content-center">
+    <form class="row g-3 py-4 mt-5 justify-content-center">
     <div class="col-md-4 px-4">
       <label for="validationDefault01" class="form-label">First name</label>
       <input type="text" class="form-control" id="validationDefault01" required/>

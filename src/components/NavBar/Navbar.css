@@ -1,3 +1,9 @@
 .navbar-nav a{
     font-size: 18px;
 }
+
+.logo{
+    height: 70px;
+    width: 70px;
+    margin: 0 10px;
+}

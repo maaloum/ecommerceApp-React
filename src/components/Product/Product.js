@@ -50,7 +50,7 @@ export default function Product() {
         return(
             <>
             <div class="col-md-6">
-                <img src={product.image} alt={product.title} height = "700px" width="400px"/>
+                <img src={product.image} alt={product.title} height = "500px" width="400px"/>
             </div>
             <div class="col-md-6">
                 <h4 className='text-uppercase text-black-50'>
@@ -74,6 +74,7 @@ export default function Product() {
                 <NavLink className="btn btn-outline-info ms-2 px-3 py-2 " to= '/cart'>Go to Cart</NavLink>
 
             </div>
+            
             </>
         )
         }
