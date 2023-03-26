@@ -13,29 +13,27 @@ export default function Product() {
             setLoading(true);
             const response = await fetch(`https://fakestoreapi.com/products/${id}`);
             const data = await response.json();
-            console.log(data)
             setProduct(data);
             setLoading(false);
         }
         getProduct();
-    }, []);
+    }, [id]);
 
     const Loading = () => {
         return (
-        <div>
-            <div class=" col-md-3 ">
-                    <Skeleton height={350}/>
+        <>
+            <div class=" col-md-6 ">
+                    <Skeleton height={400}/>
             </div>
             <div class=" col-md-3 ">
-                <Skeleton height={350}/>
+                <Skeleton height={300} width={300}/>
+                <Skeleton height={75}/>
+                <Skeleton height={25} width={150}/>
+                <Skeleton height={50} />
+                <Skeleton height={150}/>
+
             </div>
-            <div class=" col-md-3 ">
-                <Skeleton height={350}/>
-            </div>
-            <div class=" col-md-3 ">
-                <Skeleton height={350}/>
-            </div>
-        </div>
+        </>
         )
            
     }
@@ -74,7 +72,7 @@ export default function Product() {
   return (
     <div>   
         <div class="container py-5">
-            <div class="row">
+            <div class="row py-4">
             {loading ? <Loading /> : <ShowProduct />}
             </div>
         </div>
